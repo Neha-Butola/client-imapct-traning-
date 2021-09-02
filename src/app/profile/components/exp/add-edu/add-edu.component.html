@@ -1,0 +1,63 @@
+<div class="container">
+  <p>add-edu works!</p>
+  <form (ngSubmit)="eduSubmit()">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="* School Or Bootcamp"
+        name="school"
+        required
+        [(ngModel)]="edu.school"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="* Degree Or Certificate"
+        name="degree"
+        required
+        [(ngModel)]="edu.degree"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Field Of Study"
+        name="fieldofstudy"
+        [(ngModel)]="edu.fieldofstudy"
+      />
+    </div>
+    <h6>From Date</h6>
+    <div class="form-group">
+      <input
+        type="date"
+        class="form-control form-control-lg"
+        name="from"
+        [(ngModel)]="edu.from"
+      />
+    </div>
+    <h6>To Date</h6>
+    <div class="form-group">
+      <input
+        type="date"
+        class="form-control form-control-lg"
+        name="to"
+        [(ngModel)]="edu.to"
+      />
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control form-control-lg"
+        placeholder="Program Description"
+        name="description"
+      ></textarea>
+      <small class="form-text text-muted"
+        >Tell us about your experience and what you learned</small
+      >
+    </div>
+    <input type="submit" class="btn btn-info btn-block mt-4" />
+  </form>
+</div>

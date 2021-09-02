@@ -1,0 +1,81 @@
+<div class="container">
+  <form (ngSubmit)="expSubmit()">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="* Job Title"
+        name="title"
+        required
+        [(ngModel)]="exp.title"
+        [ngClass]="{
+          'form-control form-control-lg': true,
+          'is-invalid': errors.title
+        }"
+      />
+      <div class="d-block invalid-feedback">
+        {{ errors.title }}
+      </div>
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="* Company"
+        name="company"
+        required
+        [(ngModel)]="exp.company"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control form-control-lg"
+        placeholder="Location"
+        name="location"
+        [(ngModel)]="exp.location"
+      />
+    </div>
+    <h6>From Date</h6>
+    <div class="form-group">
+      <input
+        type="date"
+        class="form-control form-control-lg"
+        name="from"
+        [(ngModel)]="exp.from"
+      />
+    </div>
+    <h6>To Date</h6>
+    <div class="form-group">
+      <input
+        type="date"
+        class="form-control form-control-lg"
+        name="to"
+        [(ngModel)]="exp.to"
+      />
+    </div>
+    <div class="form-check mb-4">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        name="current"
+        value=""
+        id="current"
+        [(ngModel)]="exp.current"
+      />
+      <label class="form-check-label" for="current"> Current Job </label>
+    </div>
+    <div class="form-group">
+      <textarea
+        class="form-control form-control-lg"
+        placeholder="Job Description"
+        name="description"
+        [(ngModel)]="exp.description"
+      ></textarea>
+      <small class="form-text text-muted"
+        >Some of your responsabilities, etc</small
+      >
+    </div>
+    <input type="submit" class="btn btn-info btn-block mt-4" />
+  </form>
+</div>

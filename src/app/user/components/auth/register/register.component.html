@@ -1,0 +1,83 @@
+<!-- Register -->
+<div class="register">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 m-auto">
+        <h1 class="display-4 text-center">Sign Up</h1>
+        <p class="lead text-center">Create your DevConnector account</p>
+        <form (ngSubmit)="registerSubmit()">
+          <div class="form-group">
+            <input
+              type="text"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': errors.name
+              }"
+              placeholder="Name"
+              name="name"
+              required
+              [(ngModel)]="register.name"
+            />
+            <div class="d-block invalid-feedback">
+              {{ errors.name }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': errors.email
+              }"
+              placeholder="Email Address"
+              name="email"
+              [(ngModel)]="register.email"
+            />
+            <small className="form-text text-muted"
+              >This site uses Gravatar so if you want a profile image, use a
+              Gravatar email</small
+            >
+            <div class="d-block invalid-feedback">
+              {{ errors.email }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': errors.password
+              }"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="register.password"
+            />
+            <div class="d-block invalid-feedback">
+              {{ errors.password }}
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              [ngClass]="{
+                'form-control form-control-lg': true,
+                'is-invalid': errors.password2
+              }"
+              placeholder="Confirm Password"
+              name="password2"
+              [(ngModel)]="register.password2"
+            />
+            <div class="d-block invalid-feedback">
+              {{ errors.password2 }}
+            </div>
+          </div>
+
+          <input type="submit" class="btn btn-info btn-block mt-4" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
